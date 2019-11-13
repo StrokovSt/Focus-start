@@ -1,0 +1,1245 @@
+/* ---------------- Глобальные свойства ---------------- */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  min-width: 1400px;
+  margin: 0;
+  padding: 0;
+  
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #878786;
+  
+  background-color: #ffffff;
+}
+
+a {
+  color: #757575;
+  text-decoration: none;
+  
+  transition: 0.15s;
+}
+  
+a:hover,
+a:focus
+{
+  opacity: 0.6;
+}
+
+ a:active {
+  opacity: 0.4;
+}
+
+.visually-hidden {
+  position: absolute;
+  
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {  
+  width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---------------- Шапка сайта ---------------- */
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 100px;
+}
+
+/* -------- Форма --------- */
+
+.header__form {
+  display: flex;  
+}
+
+.header__form input[type="search"] {
+  min-width: 325px;
+  height: 40px;
+  padding: 11px 0 11px 14px;
+  border: solid 1px #e0e0e0;
+  border-right: none;
+  outline: none;
+  
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 100;
+  color: #757575;
+  
+  background-color: #fff;
+  transition: 0.35s;
+}
+  
+.header__form input[type="search"]:hover, 
+.header__form input[type="search"]:focus {
+  border-color: #8bc34a;
+  opacity: 1;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button
+{ 
+  display: none; 
+}
+
+.header__form input[type="submit"] {
+  display: block;
+  width: 75px;
+  height: 40px; 
+  border: none; 
+  
+  font-family: 'Open Sans';
+  font-size: 14px;
+  color: #ffffff;
+  
+  background-color: #8bc34a;
+}
+
+.header__form input[type="submit"]:hover,
+.header__form input[type="submit"]:focus 
+{
+  background-color: rgba(139, 195, 74, 0.9);
+}
+
+.header__form input[type="submit"]:active {
+  opacity: 0.7;
+}
+
+/* -------- Список иконок -------- */
+
+.header__list {
+  list-style: none;
+  display: flex;
+  align-items: center;  
+}
+
+.header__button { 
+  position: relative;
+  margin-right: 23px; 
+}
+
+.header__list .plus::after {
+  content: "9+";
+  
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  padding: 2.5px;
+  border-radius: 50%;
+  background-color: #8bc34a;
+  
+  font-size: 12px;
+  color: #fff;
+  transition: 0.25s;
+}
+
+.plus:hover:after,
+.plus:focus:after
+{
+  background-color: red;
+}
+
+.empty-button { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  
+  border: solid 1px #757575;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.empty-button:hover,
+.empty-button:focus { 
+  opacity: 1;
+  color: #fff;
+  background-color: #8bc34a;
+  border-color: #8bc34a;
+}
+
+.empty-button:active { 
+  opacity: 0.7;
+}
+  
+.header__icon {
+  margin-right: 28px;
+}
+
+.header__login {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  fill: #c8c8c8;
+}
+
+.heart:hover,
+.icon__link:focus > .heart {
+  fill:red;
+  opacity: 1;
+}
+
+.car:hover,
+.icon__link:focus > .car  {
+  fill: #8bc34a;
+  opacity: 1;
+}
+
+.arrow:hover,
+.icon__link:focus > .arrow  {
+  fill: black;
+  opacity: 1;
+}
+
+.header__login .arrow {
+  margin-left: 8px;
+  
+  transform: rotate(90deg);
+}
+
+/* -------- Навигация ------- */
+
+nav {
+  background-color: #f4f4f4; 
+}
+
+.header__navigation-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: -22.5px;
+  list-style: none;
+}
+
+.navigation-item__link {
+  display: flex;
+  align-items: center;
+  padding: 10px 22.5px;
+  height: 45px;
+  
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.navigation-item__link:hover,
+.navigation-item__link:focus {
+  background-color: #7F7F7F;
+  color: #fff;
+}
+
+.navigation-item-colored {
+  background-color: #7F7F7F;
+  color: #fff;
+}
+
+/* -------- Второй уровень навигации ------- */
+
+.dropdown {
+  position: relative;
+}
+
+.Home-Decor-menu {
+  position: absolute;
+  left: 0;
+}
+
+.Home-Decor-item {
+  position: relative;
+  
+  display: none;
+  min-width: 620px;
+  padding: 30px 22.5px;
+  
+  box-shadow: 0.7px 10px 20px 0 rgba(9, 9, 9, 0.2);
+  background-color: #ffffff;
+  
+  z-index: 2;
+}
+
+.heading-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  border-bottom: 1px solid #8bc34a;
+}
+
+.heading-strip__block h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.Home-Decor-item__description {
+  margin-bottom: 20px;
+  
+  font-size: 15px;
+  line-height: 1.33;
+  color: #8bc34a;
+}
+
+.item-quantity {
+  font-size: 12px;
+  color: #878786;
+}
+
+.Home-Decor__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.Home-Decor-list {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.Decor-item {
+  font-size: 15px;
+  line-height: 2;
+  color: #878786;
+}
+
+.modal-show {
+  display: block;
+  
+  animation: bounce 0.8s;
+}
+
+/* ---------------- Анимации ---------------- */
+
+@keyframes bounce {
+  0% {
+    opacity: 0.1;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ---------------- Main. Общее ---------------- */
+
+.crumbs-list {
+  display: flex;
+  margin: 25px 0;
+  
+  list-style: none;
+}
+
+.crumbs-item:not(:last-child) {
+  position: relative;
+  padding-right: 25px;
+  margin-right: 20px;
+}
+
+.crumbs-item:not(:last-child):after {
+  content: "";
+  
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 20px;
+  height: 20px;
+  
+  background-image: url(img/polygon-1.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  transform: rotate(270deg);
+}
+
+.crumbs-item > .active {
+  cursor: default;
+  opacity: 1;
+}
+
+/* ---------------------------------------- Main. Categoty.html -------------------------------- */
+
+.product__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 32px;
+  width: 100%;
+  list-style: none;
+}
+
+.product__container h2 {
+  font-size: 30px;
+  color: #8bc34a;
+}
+
+.product__list-item img {
+  display: block;
+}
+
+.product__list-item {
+  margin-bottom: 60px;
+}
+
+.product__list-item__top {
+  position: relative;
+}
+
+.item-hint {
+  position: absolute;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  
+  background: rgba(200, 200, 200, 0.6);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.item-hint a {
+  color: red;
+  font-weight: bold;
+}
+
+.product__list-item__top:hover > .item-hint {
+  opacity: 1;
+}
+
+.magnifier {
+  fill: yellow;
+}
+
+.product__list-item__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 20px;
+  border: 1px solid #c6c6c5;
+  border-top: none;
+}
+
+.sup-more:hover > .icon {
+  fill: black;
+}
+
+.sup-name {
+  margin: 5px 0;
+  
+  color: black;
+  font-weight: 600;
+  color: #1c1c1b;
+}
+
+.sup-price {
+  font-size: 16px;
+  color: #8bc34a;
+}
+
+.show-strip .empty-button {
+  width: 161px;
+  margin: 0 auto;
+  margin-bottom: 51px;
+}
+
+/* ---------------------------------------- Main. Categoty.html -------------------------------- */
+
+.strip {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.strip:not(:first-child) .product__list {
+  margin: 0;
+}
+
+.strip-2 .strip__block__more {
+  margin-left: 70px;
+}
+
+.strip-3 {
+  margin-top: -115px;
+  
+  align-items: flex-end;
+  flex-direction: row-reverse;
+}
+
+.strip-3 .strip__block__more {
+  margin-right: 70px;
+}
+
+/* ---------------------------------------- Таблицы -------------------------------- */
+
+/* ------------------------------- cart.html ------------------------------- */
+
+.cart-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cart-table {
+  width: 870px;
+  border-collapse: collapse;
+  border-spacing: 5px;
+  
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #878786;
+}
+
+.cart-table td {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.cart-table td:last-child {
+  text-align: end;
+  padding-right: 30px;
+} 
+
+.cart-table th {
+  padding: 20px 40px;
+  
+  line-height: 0.56;
+  color: #000000;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.cart-border {
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.total-price {
+  color: #000000;
+}
+
+/* ----------------------- блок с картинкой ------------------------ */
+
+.cart-item__img {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item__img-block {
+  padding: 10px 25px;
+  margin-left: 18px;
+  margin-right: 20px;
+  border: 1px solid #c8c8c8;
+}
+
+.cart-item__img-block img {
+  display: block;
+  margin-left: 0;
+}
+
+.cart-item__description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cross:hover {
+  fill: black;
+}
+
+/* ----------------------- QTY ввод количества товаров ----------------------- */
+
+.cart-input {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #c8c8c8;
+  
+  font-size: 16px;
+  line-height: 1;
+  color: #878786;
+  text-align: center;
+  
+  transition: 0.25s;
+}
+
+.cart-input:hover {
+  border-color: black;
+}
+
+.cart-input:focus {
+  border-color: black;
+  color: black;
+}
+
+/* ----------------------- Итоги таблицы + ввод купона ----------------------- */
+
+.cart-strip {
+  margin-top: 20px;
+}
+
+/* ----------------------- Мини таблица ----------------------- */
+
+.cart-strip-table {
+  width: 360px;
+  border-collapse: collapse;
+  border-spacing: 5px;
+  
+  font-size: 20px;
+  line-height: 1;
+  color: #000000;
+}
+
+.cart-strip-table td {
+  padding: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-align: end;
+}
+
+.strip-table-row:first-child td {
+  padding-top: 0;
+}
+
+/* ----------------------- Форма ввода купона ----------------------- */
+
+.cart__form {
+  display: flex;
+}
+
+.cart__form input[type="text"] {
+  width: 228px;
+  height: 40px;
+  padding: 11px 10px;
+  margin-right: 28px;
+  
+  font-size: 18px;
+  line-height: 1;
+  color: #cbcbcb;
+  border: 1px solid #c8c8c8;
+  
+  transition: 0.25s;
+  outline: none;
+}
+
+.cart__form input[type="text"]:hover {
+  border-color: #8bc34a;
+}
+
+.cart__form input[type="text"]:focus {
+  border-color: #8bc34a;
+  color: black;
+}
+
+.cart__form input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border: none
+  border-radius: 5px;
+  
+  font-size: 14px;
+  line-height: 2.71;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #878786;
+  
+  transition: 0.25s;
+  outline: none;
+}
+
+.cart__form input[type="submit"]:hover {
+  background-color: #8bc34a;
+}
+
+.cart__form input[type="submit"]:active{
+  opacity: 0.8;
+}
+
+.cart-checkout {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* ----------------------- Total amount block ----------------------- */
+
+.checkout-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 367px;
+  height: 157px;
+  padding: 30px;
+  box-shadow: 0.3px 5px 10px 0 rgba(9, 9, 9, 0.2), 1.4px 20px 221px 0 rgba(255, 255, 255, 0.5);
+  background-color: #ffffff;
+}
+
+.checkout-amount {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #282828;
+}
+
+.checkout-price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.green-button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: flex-end;
+  width: 100%;
+  height: 40px;
+  
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 2.71;
+  color: #ffffff;
+  
+  background-color: #8bc34a;
+  transition: 0.25s;
+}
+
+.green-button:hover,
+.green-button:focus {
+  background-color: red;
+}
+
+.cart__block .checkout-box {
+  float: right;
+}
+
+.cart__ad {
+  text-align: end;
+}
+
+/* ---------------------------------------- Main. Cart-checkout -------------------------------- */
+
+.checkout-container {
+  position: relative;
+  width: 972px;
+  margin: 0 auto;
+}
+
+.checkout-strip__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 18px;
+}
+
+.checkout-strip-item {
+  flex-basis: 20%;
+  padding: 8px 10px;
+  
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.28px;
+  color: #8bc34a;
+}
+
+.checkout-strip-item:last-child {
+  text-align: end;
+}
+
+.checkout-strip-link {
+  color: #878786;
+}
+
+.checkout-link-active {
+  color: #8bc34a;
+}
+
+.checkout-link-active:hover {
+  opacity: 1;
+}
+
+/* -------------------------- Стили форм -------------------------- */
+
+.checkout-form {
+  position: relative;
+  
+  display: none;
+  
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 30px;
+  padding-bottom: 27px;
+  margin-bottom: 80px;
+  min-height: 640px;
+  border: 1px solid #c6c6c5;
+}
+
+.checkout-form-1::before {
+  content: "";
+  
+  position: absolute;
+  top: -1.7%;
+  left: 35.5%;
+  
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c6c6c5;
+  border-bottom: none;
+  border-right: none;
+  background-color: white;
+  
+  transform: rotate(45deg); 
+  z-index: 2;
+}
+
+.checkout-form-2::before {
+  content: "";
+  
+  position: absolute;
+  top: -1.7%;
+  left: 65.5%;
+  
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c6c6c5;
+  border-bottom: none;
+  border-right: none;
+  background-color: white;
+  
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.checkout-final {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 154px;
+}
+
+.checkout-final h2 {
+  margin-bottom: 20px;
+  
+  font-size: 50px;
+   line-height: 60px;
+  text-align: center;
+  color: #8bc34a;
+}
+
+.checkout-final p {
+  margin-bottom: 96px;
+  
+  font-size: 20px;
+  line-height: 0.46;
+  text-align: center;
+  color: #282828;
+}
+
+.checkout-final .empty-button {
+  width: 164px;
+  margin-bottom: 415px;
+}
+
+.flex-modal-show {
+  display: flex;
+}
+
+/* ---------------- Настройки элементов label - > input (text) || (select) -------------------- */
+
+.checkout-input-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.checkout-label {
+  margin-bottom: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  color: #000000;
+}
+
+.checkout-input {
+  width: 290px;
+  height: 40px;
+  padding: 11px 10px;
+  margin-bottom: 24px;
+  border: solid 1px #c6c6c5;
+  
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #878786;
+  transition: 0.25s;
+}
+
+.long-height-input {
+  width: 100%;
+}
+
+.long-height-input > input {
+  width: 100%;
+}
+
+.checkout-input-mini {
+  width: 160px;
+}
+
+.checkout-input-big {
+  width: 340px;
+}
+
+.checkout-input:hover,
+.checkout-select:hover {
+  border-color: black;
+}
+
+.checkout-input:focus,
+.checkout-select:focus {
+  border-color: black;
+  color: black;
+}
+
+.checkout-select {
+  position: relative;
+  
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  
+  display: inline-block;
+  position: relative;
+  width: 290px;
+  height: 40px;
+  padding: 11px 10px;
+  margin-bottom: 24px;
+  border: solid 1px #c6c6c5;
+  
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #878786;
+  transition: 0.25s;
+  
+  background-image: url(img/select-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+.checkout-address {
+  position: relative;
+}
+
+.checkout-address::after {
+  content: "* Required";
+  position: absolute;
+  top: 7%;
+  right: 0;
+  font-size: 12px;
+  line-height: 2.2;
+  color: #ea5c37;
+}
+
+.checkout-card {
+  background-image: url(img/visa.svg);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+/* ---------------- Настройки элементов label - > input (checkbox) -------------------- */
+
+.checkout-strape {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-radio-block {
+  margin-bottom: 25px;
+}
+
+.cart-checkbox-label {
+  position: relative;
+  
+  padding-left: 30px;
+  
+  line-height: 0.64;
+  color: #cbcbcb;
+}
+
+.cart-checkbox-label::before {
+  content: "";
+  
+  position: absolute;
+  left: 0;
+  top: -100%;
+  
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: solid 1px #c6c6c5;
+  border-radius: 5px;
+  
+  cursor: pointer;
+}
+
+#cart-checkbox-1:checked ~ .cart-checkbox-label::before {
+  background-image: url("img/check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  
+  z-index: 1;
+}
+
+.cart-radio-label {
+  position: relative;
+  
+  padding-left: 30px;
+  
+  line-height: 0.64;
+  font-weight: 600;
+  color: #000000;
+  
+  transition: 0.15s;
+}
+
+.cart-radio-label::before {
+  content: "";
+  
+  position: absolute;
+  left: 0;
+  top: -55%;
+  
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: solid 1px #c6c6c5;
+  border-radius: 50%;
+  
+  cursor: pointer;
+}
+
+#cart-radio-1:checked ~ .cart-radio-label::before,
+#cart-radio-2:checked ~ .cart-radio-label::before {
+  background-image: url("img/check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  
+  z-index: 1;
+}
+
+#cart-radio-1:checked ~ .cart-radio-label,
+#cart-radio-2:checked ~ .cart-radio-label{
+  color: #8bc34a;
+}
+
+.radio-1 {
+  font-weight: normal;
+}
+
+/* ---------------- Строка кнопок -------------------- */
+
+.checkout-button-block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+   margin-top: 70px;
+}
+
+.checkout-button-block .empty-button{
+  width: 100px;
+  border-radius: 5px;
+}
+
+.checkout-button-block .long-button {
+  width: 340px;
+  background-color: #8bc34a;
+  color: white;
+}
+
+/* -------------------------- Левый блок. таблица -------------------------- */
+
+.checkout-form-left-block {
+  max-width: 526px;
+  border-right: 1px solid #c8c8c8;
+}
+
+.checkout-table {
+  width: 526px;
+}
+
+.checkout-table td {
+  padding: 8px 0;
+}
+
+.checkout-item__img-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 68px;
+  height: 50px;
+
+  margin-right: 20px;
+  margin-left: 0;
+  border: 1px solid #c8c8c8;
+}
+
+.checkout-form-left-block h3 {
+  font-size: 14px;
+  letter-spacing: 0.28px;
+  color: #8bc34a;
+}
+
+/* -------------------------- Модальное окно -------------------------- */
+
+.modal {
+  width: 502px;
+  margin: 0 auto;
+  padding: 60px 51px 20px 51px;
+}
+
+.modal-logo,
+.modal-input {
+  margin-bottom: 20px;
+}
+
+.modal-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-checkbox-label::before {
+  content: "";
+  
+  position: absolute;
+  left: 0;
+  top: -100%;
+  
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: solid 1px #c6c6c5;
+  border-radius: 5px;
+  
+  cursor: pointer;
+}
+
+#cart-checkbox-1:checked ~ .cart-checkbox-label::before {
+  background-image: url("img/check-mark.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  
+  z-index: 1;
+}
+
+
+/* ---------------- Подвал сайта ---------------- */
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 227px 0 227px;
+  
+  border-bottom: 1px solid grey;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  
+  margin-bottom: 21px;
+}
+
+.footer__list-item { 
+  margin-bottom: 10px;
+}
+
+.footer__list-item h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1c1c1b;
+}
+
+.footer__list-item a { 
+  font-size: 14px;
+  line-height: 2.14;
+  text-decoration: none;
+  color: #1c1c1b;
+  
+  transition: 0.25s;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+}
+
+.social-icon > svg { 
+  display: block;
+  margin-right: 9px;
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__copyright-list {
+  display: flex;
+  margin: 20px 0;
+  list-style: none;
+}
+
+.footer__copyright-item {
+  margin: 0 10px;
+  
+  font-size: 14px;
+  line-height: 1.78;
+  color: #878786;
+}
